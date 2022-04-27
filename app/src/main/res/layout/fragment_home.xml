@@ -7,41 +7,6 @@
     android:background="@color/teal_700"
     tools:context=".HomeFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sijuko"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-            <RelativeLayout
-                android:layout_width="30dp"
-                android:layout_height="match_parent"/>
-            <Button
-                android:gravity="left|center_vertical"
-                android:textAllCaps="false"
-                android:text="@string/search"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <RelativeLayout
-                android:layout_width="15dp"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
-
     <!--header-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,13 +15,16 @@
     <LinearLayout
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="-50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/splash">
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="120dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
             android:src="@drawable/kopma"/>
     </LinearLayout>
 
