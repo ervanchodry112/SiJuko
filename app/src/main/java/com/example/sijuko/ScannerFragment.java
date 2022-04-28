@@ -1,12 +1,22 @@
 package com.example.sijuko;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.budiyev.android.codescanner.CodeScanner;
+import com.budiyev.android.codescanner.CodeScannerView;
+import com.budiyev.android.codescanner.DecodeCallback;
+import com.example.sijuko.databinding.FragmentScannerBinding;
+import com.google.zxing.Result;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +65,47 @@ public class ScannerFragment extends Fragment {
         }
     }
 
+    private CodeScanner mCodeScanner;
+    private FragmentScannerBinding binding;
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scanner, container, false);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        final Activity activity = getActivity();
+        binding = FragmentScannerBinding.inflate(getLayoutInflater(), container, false);
+        View root = binding.getRoot();
+        CodeScannerView scannerView = binding.scannerView;
+        mCodeScanner = new CodeScanner(activity, scannerView);
+        mCodeScanner.setDecodeCallback(new DecodeCallback() {
+            @Override
+            public void onDecoded(@NonNull final Result result) {
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+        scannerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mCodeScanner.startPreview();
+            }
+        });
+        return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mCodeScanner.startPreview();
+    }
+
+    @Override
+    public void onPause() {
+        mCodeScanner.releaseResources();
+        super.onPause();
     }
 }
