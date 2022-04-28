@@ -1,5 +1,6 @@
 package com.example.sijuko;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 
 import com.example.sijuko.R;
 import com.example.sijuko.databinding.ActivityMainBinding;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         bottomNavigationView = binding.battomNav;
 
