@@ -13,4 +13,9 @@
     <string name="poin">Poin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="survey">Survey</string>
+    <string name="kegiatan">Kegiatan</string>
+    <string name="lprn_keuangan">Laporan Keuangan</string>
+    <string name="panduan">Panduan Anggota</string>
+    <string name="katalog">Katalog Usaha</string>
 </resources>
