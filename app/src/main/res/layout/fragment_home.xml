@@ -1,32 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/teal_700"
     tools:context=".HomeFragment">
 
-    <!--header-->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@drawable/header"/>
-    <LinearLayout
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="-50dp"
+        android:layout_height="180dp"
+        android:background="@drawable/header">
+
+        <TextView
+            android:id="@+id/hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="60dp"
+            android:text="Hello,"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:paddingLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:layout_below="@id/hello"
+            android:textColor="@color/design_default_color_on_primary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:paddingLeft="20dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mainInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/splash">
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/kopma"/>
-    </LinearLayout>
+        android:background="@drawable/splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="-25dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
+        <ImageButton
+            android:id="@+id/addTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_outline_add_box_24" />
+        <ImageView
+            android:id="@+id/divider1"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:src="@drawable/divider"
+            android:layout_toRightOf="@+id/addTransaction"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/totalSimpanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:layout_toRightOf="@id/divider1"
+            android:text="@string/totalSimpanan"
+            android:textColor="@color/black"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/simpanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/totalSimpanan"
+            android:layout_marginLeft="13dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@id/divider1"
+            android:text="@string/simwa"
+            android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/divider2"
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:src="@drawable/divider"
+            android:layout_toRightOf="@id/totalSimpanan"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/totalPoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/divider2"
+            android:text="@string/totalPoin"
+            android:textSize="26sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/poin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/divider2"
+            android:layout_below="@id/totalPoin"
+            android:text="@string/poin"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/menuIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </HorizontalScrollView>
 
 </LinearLayout>

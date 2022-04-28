@@ -5,4 +5,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="sijuko">SiJuko</string>
     <string name="search">search</string>
+    <string name="name">Ervan</string>
+    <string name="totalSimpanan">Rp150.000</string>
+    <string name="simwa">Simpanan</string>
+    <string name="totalPoin">50</string>
+    <string name="poin">Poin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
