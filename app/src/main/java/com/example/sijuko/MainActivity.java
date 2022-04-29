@@ -3,6 +3,7 @@ package com.example.sijuko;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,16 +15,18 @@ import com.example.sijuko.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigationView;
-    ActivityMainBinding binding;
+    private BottomNavigationView bottomNavigationView;
+    private ActivityMainBinding binding;
 
-    com.example.sijuko.HomeFragment homeFragment = new com.example.sijuko.HomeFragment();
-    com.example.sijuko.HistoryFragment historyFragment = new com.example.sijuko.HistoryFragment();
-    com.example.sijuko.ScannerFragment scannerFragment = new com.example.sijuko.ScannerFragment();
-    com.example.sijuko.NotificationFragment notificationFragment = new com.example.sijuko.NotificationFragment();
-    com.example.sijuko.ProfileFragment profileFragment = new com.example.sijuko.ProfileFragment();
+    private com.example.sijuko.HomeFragment homeFragment = new com.example.sijuko.HomeFragment();
+    private com.example.sijuko.HistoryFragment historyFragment = new com.example.sijuko.HistoryFragment();
+    private com.example.sijuko.ScannerFragment scannerFragment = new com.example.sijuko.ScannerFragment();
+    private com.example.sijuko.NotificationFragment notificationFragment = new com.example.sijuko.NotificationFragment();
+    private com.example.sijuko.ProfileFragment profileFragment = new com.example.sijuko.ProfileFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
