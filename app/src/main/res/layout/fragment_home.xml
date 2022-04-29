@@ -74,18 +74,19 @@
             android:layout_toRightOf="@id/divider1"
             android:text="@string/totalSimpanan"
             android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/simpanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/totalSimpanan"
-            android:layout_marginLeft="13dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/divider1"
             android:text="@string/simwa"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
+
         <ImageView
             android:id="@+id/divider2"
             android:layout_width="2dp"
@@ -103,19 +104,20 @@
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/divider2"
             android:text="@string/totalPoin"
-            android:textSize="26sp"
+            android:textSize="24sp"
             android:textColor="@color/black"/>
+
         <TextView
             android:id="@+id/poin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/divider2"
             android:layout_below="@id/totalPoin"
-            android:text="@string/poin"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="5dp"
-            android:textSize="18sp"/>
+            android:layout_toRightOf="@id/divider2"
+            android:text="@string/poin"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <HorizontalScrollView
