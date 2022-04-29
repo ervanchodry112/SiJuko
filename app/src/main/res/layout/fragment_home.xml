@@ -74,18 +74,19 @@
             android:layout_toRightOf="@id/divider1"
             android:text="@string/totalSimpanan"
             android:textColor="@color/black"
-            android:textSize="26sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/simpanan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/totalSimpanan"
-            android:layout_marginLeft="13dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@id/divider1"
             android:text="@string/simwa"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
+
         <ImageView
             android:id="@+id/divider2"
             android:layout_width="2dp"
@@ -103,26 +104,125 @@
             android:layout_marginTop="5dp"
             android:layout_toRightOf="@id/divider2"
             android:text="@string/totalPoin"
-            android:textSize="26sp"
+            android:textSize="24sp"
             android:textColor="@color/black"/>
+
         <TextView
             android:id="@+id/poin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/divider2"
             android:layout_below="@id/totalPoin"
-            android:text="@string/poin"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="50dp"
             android:layout_marginBottom="5dp"
-            android:textSize="18sp"/>
+            android:layout_toRightOf="@id/divider2"
+            android:text="@string/poin"
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <HorizontalScrollView
         android:id="@+id/menuIcon"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginHorizontal="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="fill_horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/icn_survey"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:backgroundTint="@color/white"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/grey"
+                app:cornerRadius="15dp"
+                android:drawableTop="@drawable/ic_baseline_question_answer_24"
+                android:text="@string/survey"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:drawableTint="@color/teal_700"
+                android:layout_marginHorizontal="5dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/icn_kegiatan"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/white"
+                android:drawableTop="@drawable/ic_baseline_calendar_month_24"
+                android:drawableTint="@color/teal_700"
+                android:text="@string/kegiatan"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:cornerRadius="15dp"
+                app:strokeColor="@color/grey"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/icn_keuangan"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:backgroundTint="@color/white"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/grey"
+                app:cornerRadius="15dp"
+                android:drawableTop="@drawable/ic_baseline_show_chart_24"
+                android:text="@string/lprn_keuangan"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:drawableTint="@color/teal_700"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="-10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/icn_panduan"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:backgroundTint="@color/white"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/grey"
+                app:cornerRadius="15dp"
+                android:drawableTop="@drawable/ic_baseline_import_contacts_24"
+                android:text="@string/panduan"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:drawableTint="@color/teal_700"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="-10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/icn_katalog"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:backgroundTint="@color/white"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/grey"
+                app:cornerRadius="15dp"
+                android:drawableTop="@drawable/ic_baseline_shopping_cart_24"
+                android:text="@string/katalog"
+                android:textColor="@color/black"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:drawableTint="@color/teal_700"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="-10dp"/>
+
+        </LinearLayout>
 
     </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

@@ -1,15 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ProfileFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/prfl_data"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="25dp"
-        android:layout_centerInParent="true"/>
+        android:orientation="horizontal"
+        android:padding="20dp">
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/prfl_pct"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            android:background="@drawable/profile_pict"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/prfl_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ervan Chodry"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/prfl_nomor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2093/KOPMA_UL/20"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:src="@drawable/divider"/>
+
+    <LinearLayout
+        android:id="@+id/menu_bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_bio"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_person_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/biodata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Biodata"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_settings"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/settings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:src="@drawable/divider"/>
+
+    <LinearLayout
+        android:id="@+id/menu_poin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/pict_poin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_currency_exchange_24"
+            android:layout_marginVertical="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/poin_anggota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Poin Keanggotaan"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_referal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_referal"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_card_giftcard_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/kode_referal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kode Referal"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_kegiatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_kegiatan"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_local_activity_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/kegiatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kegiatan"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menu_katalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_katalog"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/katalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Katalog Usaha"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:src="@drawable/divider"/>
+
+    <LinearLayout
+        android:id="@+id/menu_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/icn_logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_exit_to_app_24"
+            android:layout_marginVertical="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Log Out"
+                android:textColor="@color/black"
+                android:textSize="19sp"
+                android:layout_marginVertical="5dp"
+                android:drawableRight="@drawable/ic_baseline_chevron_right_24"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
