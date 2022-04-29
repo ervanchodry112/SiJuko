@@ -16,13 +16,14 @@
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_baseline_show_chart_24.xml" value="0.103" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_outline_add_box_24.xml" value="0.1" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/profile_pict.xml" value="0.103" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/splash.xml" value="0.1" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_main.xml" value="0.225" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/article_view.xml" value="0.15384615384615385" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_history.xml" value="0.225" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_notification.xml" value="0.225" />
-        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_profile.xml" value="0.225" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_scanner.xml" value="0.16802536231884058" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/menu/options_menu.xml" value="0.13333333333333333" />
