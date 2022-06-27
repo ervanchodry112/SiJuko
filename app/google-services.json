@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "29855944212",
+    "project_id": "si-juko",
+    "storage_bucket": "si-juko.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29855944212:android:276c859786297003f06101",
+        "android_client_info": {
+          "package_name": "com.example.sijuko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29855944212-t6doq5fe9fv4kkh6loscg12ruatm3gfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzw1oWRUhA6FgozVQ8pPXsOQLJR2Au-uc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29855944212-t6doq5fe9fv4kkh6loscg12ruatm3gfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/bg_content.xml" value="0.104" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/bg_icon_menu.xml" value="0.1" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/bg_menu_icon.xml" value="0.104" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/divider.xml" value="0.1" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/header.xml" value="0.1" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.103" />
@@ -17,9 +19,17 @@
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_baseline_show_chart_24.xml" value="0.103" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/ic_outline_add_box_24.xml" value="0.1" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/login_alert.xml" value="0.103" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/profile_pict.xml" value="0.103" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/splash.xml" value="0.1" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/drawable/trending_up.xml" value="0.104" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_catalogue.xml" value="0.18297101449275363" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_keuangan.xml" value="0.19736842105263158" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_login.xml" value="0.14201183431952663" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_schedule.xml" value="0.18297101449275363" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_success.xml" value="0.225" />
+        <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/activity_survey.xml" value="0.18297101449275363" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/article_view.xml" value="0.15384615384615385" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_history.xml" value="0.225" />
         <entry key="..\:/Source Code/Project Android Studio/SiJuko/app/src/main/res/layout/fragment_home.xml" value="0.22" />
