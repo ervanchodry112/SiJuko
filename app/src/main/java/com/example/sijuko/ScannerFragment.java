@@ -1,6 +1,7 @@
 package com.example.sijuko;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,8 +16,14 @@ import android.widget.Toast;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.example.sijuko.API.APIConfig;
+import com.example.sijuko.Model.PresensiResponse;
 import com.example.sijuko.databinding.FragmentScannerBinding;
 import com.google.zxing.Result;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +31,8 @@ import com.google.zxing.Result;
  * create an instance of this fragment.
  */
 public class ScannerFragment extends Fragment {
+
+    private String npm = "2017051001", no_anggota = "2083/KOPMA_UL/20";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -77,23 +86,24 @@ public class ScannerFragment extends Fragment {
         View root = binding.getRoot();
         CodeScannerView scannerView = binding.scannerView;
         mCodeScanner = new CodeScanner(activity, scannerView);
+
+        String npm = "2017051001";
+
         mCodeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull final Result result) {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(activity, result.getText(), Toast.LENGTH_SHORT).show();
+                        presensi(result.getText());
+                        Intent i = new Intent(getActivity(), SuccessPresensiActivity.class);
+                        startActivity(i);
                     }
                 });
             }
         });
-        scannerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mCodeScanner.startPreview();
-            }
-        });
+        scannerView.setOnClickListener(view -> mCodeScanner.startPreview());
+
         return root;
     }
 
@@ -108,4 +118,22 @@ public class ScannerFragment extends Fragment {
         mCodeScanner.releaseResources();
         super.onPause();
     }
+
+    public void presensi(String result){
+        Call<PresensiResponse> client = APIConfig.getApiService().presensi(npm, Integer.parseInt(result));
+
+        client.enqueue(new Callback<PresensiResponse>() {
+            @Override
+            public void onResponse(Call<PresensiResponse> call, Response<PresensiResponse> response) {
+                String status = response.body().getStatus();
+                String message = response.body().getPesan();
+            }
+
+            @Override
+            public void onFailure(Call<PresensiResponse> call, Throwable t) {
+                Toast.makeText(getActivity(), "Error : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

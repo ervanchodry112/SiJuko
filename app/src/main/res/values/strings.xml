@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SiJuko</string>
+    <string name="app_name">Si Juko</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -18,4 +18,5 @@
     <string name="lprn_keuangan">Laporan Keuangan</string>
     <string name="panduan">Panduan Anggota</string>
     <string name="katalog">Katalog Usaha</string>
+    <string name="post_url">https://kopmaunila.com/wp-json/wp/v2/posts?per_page=10</string>
 </resources>
