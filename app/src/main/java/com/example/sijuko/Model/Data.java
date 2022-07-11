@@ -7,21 +7,14 @@ public class Data{
 	@SerializedName("password")
 	private String password;
 
-	@SerializedName("npm")
-	private String npm;
-
-	@SerializedName("username")
-	private String username;
+	@SerializedName("passdb")
+	private String passdb;
 
 	public String getPassword(){
 		return password;
 	}
 
-	public String getNpm(){
-		return npm;
-	}
-
-	public String getUsername(){
-		return username;
+	public String getPassdb(){
+		return passdb;
 	}
 }

@@ -13,6 +13,7 @@ import com.example.sijuko.API.APIConfig;
 import com.example.sijuko.LoginActivity;
 import com.example.sijuko.MainActivity;
 import com.example.sijuko.Model.DataAnggota;
+import com.example.sijuko.Model.ErrorResponse;
 import com.example.sijuko.Model.LoginResponse;
 import com.google.gson.Gson;
 
@@ -24,6 +25,8 @@ public class LoginViewModel extends ViewModel {
     private MutableLiveData<DataAnggota> dataAnggota = new MutableLiveData<>();
     private MutableLiveData<String> message = new MutableLiveData<>();
     private MutableLiveData<Boolean> status = new MutableLiveData<>();
+
+    private static final String TAG = "LoginViewModel";
 
     public LiveData<DataAnggota> getDataAnggota() {
         return dataAnggota;
@@ -54,22 +57,28 @@ public class LoginViewModel extends ViewModel {
         client.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+
                 status.setValue(response.isSuccessful());
+                Log.d("status", Boolean.toString(response.isSuccessful()));
                 if(response.body() != null && response.isSuccessful()){
-                    dataAnggota.setValue(response.body().getDataAnggota());
+                    if(response.body().isStatus()){
+                        dataAnggota.setValue(response.body().getDataAnggota());
+                    }else{
+                        message.setValue(response.body().getMessage());
+                        Log.d(TAG, response.body().getMessage());
+                    }
                 }else{
+                    status.setValue(false);
                     message.setValue(response.message());
                     try{
                         if(response.errorBody() != null){
-                            LoginResponse loginResponse = new Gson().fromJson(response.errorBody().charStream(),
-                                    LoginResponse.class);
+                            ErrorResponse loginResponse = new Gson().fromJson(response.errorBody().charStream(),
+                                    ErrorResponse.class);
 
                             Log.e("error", loginResponse.getMessage());
-
                         }
                     }catch (Exception e){
                         Log.e("error", e.toString());
-                        Log.e("punya_respon", response.message());
                     }
                 }
             }
@@ -78,6 +87,7 @@ public class LoginViewModel extends ViewModel {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 status.setValue(false);
                 Log.e("message", t.getMessage());
+
             }
         });
     }

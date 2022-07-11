@@ -22,6 +22,7 @@ import com.example.sijuko.Article.Title;
 import com.example.sijuko.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,12 +36,20 @@ public class HomeFragment extends Fragment {
     private RecyclerView.Adapter adData;
     private RecyclerView.LayoutManager lmData;
     private List<ArticleResponse> list = new ArrayList<>();
+    private SessionManager sessionManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(getLayoutInflater(), container, false);
         View view = binding.getRoot();
+        sessionManager = new SessionManager(getActivity());
+        if(!sessionManager.isLoggedIn()){
+            Intent i = new Intent(getActivity(), LoginActivity.class);
+            startActivity(i);
+        }
+
+
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());

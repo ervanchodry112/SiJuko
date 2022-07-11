@@ -25,7 +25,7 @@ public interface APIService {
     );
 
     @FormUrlEncoded
-    @POST("adminisrasi/api/login.php")
+    @POST("administrasi/api/login.php")
     Call<LoginResponse> login(
             @Field("username") String username,
             @Field("password") String password

@@ -22,6 +22,15 @@ public class DataAnggota{
 	@SerializedName("nomor_hp")
 	private String nomorHp;
 
+	public DataAnggota(DataAnggota dataAnggota) {
+		this.namaLengkap = dataAnggota.getNamaLengkap();
+		this.npm = dataAnggota.getNpm();
+		this.nomorAnggota = dataAnggota.getNomorAnggota();
+		this.idJurusan = dataAnggota.getIdJurusan();
+		this.email = dataAnggota.getEmail();
+		this.nomorHp = dataAnggota.getNomorHp();
+	}
+
 	public String getNamaLengkap(){
 		return namaLengkap;
 	}
