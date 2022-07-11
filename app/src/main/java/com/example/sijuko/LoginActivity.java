@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.sijuko.API.APIConfig;
+import com.example.sijuko.Model.DataAnggota;
 import com.example.sijuko.Model.LoginResponse;
 import com.example.sijuko.ViewModel.LoginViewModel;
 import com.example.sijuko.databinding.ActivityLoginBinding;
@@ -23,6 +24,8 @@ public class LoginActivity extends AppCompatActivity{
     private String username, password;
     private String nama, npm, nomor_anggota, referal;
     private LoginViewModel viewModel;
+    private DataAnggota _dataAnggota;
+    SessionManager sessionManager;
 
 
     @Override
@@ -32,18 +35,30 @@ public class LoginActivity extends AppCompatActivity{
         setContentView(binding.getRoot());
 
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-
-        nama = "Fulan";
-        npm = "2017051001";
-        nomor_anggota = "2083/KOPMA_UL/20";
-        referal = nomor_anggota.substring(0,3)+nomor_anggota.substring(14);
-
+        sessionManager = new SessionManager(getApplicationContext());
 
         binding.btnLogin.setOnClickListener(view -> {
             username = binding.username.getText().toString().toLowerCase();
             password = binding.password.getText().toString();
 
             viewModel.login(username, password);
+
+        });
+
+        viewModel.getStatus().observe(LoginActivity.this, status -> {
+            if(status){
+                viewModel.getDataAnggota().observe(LoginActivity.this, dataAnggota -> {
+                    _dataAnggota = dataAnggota;
+                    Log.d("simpen", _dataAnggota.getNpm());
+                    sessionManager.createLoginSession(_dataAnggota);
+//                    Intent i = new Intent(this, MainActivity.class);
+//                    startActivity(i);
+                    finish();
+                });
+            }else{
+                Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
+                Log.d("gagal", "Login gagal");
+            }
         });
     }
 

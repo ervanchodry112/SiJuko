@@ -26,7 +26,7 @@ public class SessionManager {
         editor = sharedPreferences.edit();
     }
 
-    public void createLoginSeesion(DataAnggota user){
+    public void createLoginSession(DataAnggota user){
         editor.putBoolean(IS_LOGED_IN, true);
         editor.putString(NPM, user.getNpm());
         editor.putString(NAMA, user.getNamaLengkap());
@@ -48,10 +48,11 @@ public class SessionManager {
 
     public void logoutSession(){
         editor.clear();
+        editor.putBoolean(IS_LOGED_IN, false);
         editor.commit();
     }
 
-    public boolean isLogedIn(){
+    public boolean isLoggedIn(){
         return sharedPreferences.getBoolean(IS_LOGED_IN, false);
     }
 }
