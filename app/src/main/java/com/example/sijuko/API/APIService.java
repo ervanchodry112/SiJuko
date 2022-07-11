@@ -1,7 +1,9 @@
 package com.example.sijuko.API;
 
 import com.example.sijuko.Article.ArticleResponse;
+import com.example.sijuko.Model.LoginResponse;
 import com.example.sijuko.Model.PresensiResponse;
+import com.example.sijuko.Model.RegisterResponse;
 
 import java.util.List;
 
@@ -20,5 +22,20 @@ public interface APIService {
     Call<PresensiResponse> presensi(
             @Field("npm") String npm,
             @Field("kode_kegiatan") int kode
+    );
+
+    @FormUrlEncoded
+    @POST("adminisrasi/api/login.php")
+    Call<LoginResponse> login(
+            @Field("username") String username,
+            @Field("password") String password
+    );
+
+    @FormUrlEncoded
+    @POST("administrasi/api/register.php")
+    Call<RegisterResponse> registrasi(
+            @Field("username") String username,
+            @Field("password") String password,
+            @Field("npm") String npm
     );
 }
