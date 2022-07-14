@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sijuko.View.Notification;
 import com.example.sijuko.databinding.HistoryViewBinding;
 import com.example.sijuko.databinding.NotificationViewBinding;
 

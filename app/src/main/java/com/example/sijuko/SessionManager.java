@@ -13,12 +13,13 @@ public class SessionManager {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    private static final String IS_LOGED_IN = "isLogedIn";
-    private static final String NPM = "npm";
-    private static final String NAMA = "nama";
-    private static final String NOMOR_ANGGOTA = "nomor_anggota";
-    private static final String EMAIL = "email";
-    private static final String NO_HANDPHONE = "noHandphone";
+    public static final String IS_LOGED_IN = "isLogedIn";
+    public static final String NPM = "npm";
+    public static final String NAMA = "nama";
+    public static final String NOMOR_ANGGOTA = "nomor_anggota";
+    public static final String EMAIL = "email";
+    public static final String NO_HANDPHONE = "noHandphone";
+    public static final String REFERAL = "referal";
 
     public SessionManager(Context _context) {
         this._context = _context;
@@ -33,6 +34,7 @@ public class SessionManager {
         editor.putString(NOMOR_ANGGOTA, user.getNomorAnggota());
         editor.putString(EMAIL, user.getEmail());
         editor.putString(NO_HANDPHONE, user.getNomorHp());
+        editor.putString(REFERAL, user.getNamaLengkap().substring(0,2).toUpperCase()+user.getNomorAnggota().substring(0,4));
         editor.commit();
     }
 
@@ -43,6 +45,7 @@ public class SessionManager {
         user.put(NOMOR_ANGGOTA, sharedPreferences.getString(NOMOR_ANGGOTA, null));
         user.put(EMAIL, sharedPreferences.getString(EMAIL, null));
         user.put(NO_HANDPHONE, sharedPreferences.getString(NO_HANDPHONE, null));
+        user.put(REFERAL, sharedPreferences.getString(REFERAL, null));
         return user;
     }
 

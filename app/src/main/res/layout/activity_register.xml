@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:background="@drawable/header"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/splash"
+            android:layout_marginTop="-425dp"
+            android:elevation="10dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="20dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo_kopma_unila"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:elevation="10dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="REGISTRASI AKUN"
+                android:textAlignment="center"
+                android:textColor="@color/primaryColor"
+                android:textSize="30sp"
+                android:layout_marginVertical="20dp"
+                app:fontFamily="@font/open_sans_bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NPM"
+                android:textColor="@color/primaryColor"
+                android:layout_marginLeft="23dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/npm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:hint="npm"
+                android:layout_marginBottom="5dp"/>
+    <!--            android:drawableEnd="@drawable/ic_alert_circle_outline"-->
+    <!--            android:inputType="number"-->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text="NPM Sudah Terdaftar!"
+                android:textAlignment="textEnd"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="#EB1D36"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Lengkap"
+                android:textColor="@color/primaryColor"
+                android:layout_marginLeft="23dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/nama_lengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:inputType="textPersonName"
+                android:hint="nama" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nomor Anggota"
+                android:textColor="@color/primaryColor"
+                android:layout_marginLeft="23dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/nomor_anggota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:inputType="textCapCharacters"
+                android:hint="nomor anggota" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/primaryColor"
+                android:layout_marginLeft="23dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:inputType="textPassword"
+                android:hint="password" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Re-type Password"
+                android:textColor="@color/primaryColor"
+                android:layout_marginLeft="23dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:inputType="textPassword"
+                android:hint="password" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                android:text="DAFTAR"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/open_sans_bold"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="CANCEL"
+                android:backgroundTint="@color/white"
+                app:strokeColor="@color/primaryColor"
+                app:strokeWidth="1dp"
+                android:textColor="@color/primaryColor"
+                android:textSize="18sp"
+                android:fontFamily="@font/open_sans_bold"/>
+
+            <LinearLayout
+                android:id="@+id/alert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/login_alert"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="30dp"
+                android:visibility="gone">
+                <TextView
+                    android:id="@+id/konten"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Username atau password salah!"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

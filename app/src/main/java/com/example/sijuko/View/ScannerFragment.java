@@ -1,4 +1,4 @@
-package com.example.sijuko;
+package com.example.sijuko.View;
 
 import android.app.Activity;
 import android.content.Intent;

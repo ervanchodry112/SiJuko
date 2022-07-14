@@ -1,17 +1,12 @@
 package com.example.sijuko.ViewModel;
 
-import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.sijuko.API.APIConfig;
-import com.example.sijuko.LoginActivity;
-import com.example.sijuko.MainActivity;
 import com.example.sijuko.Model.DataAnggota;
 import com.example.sijuko.Model.ErrorResponse;
 import com.example.sijuko.Model.LoginResponse;
@@ -87,7 +82,6 @@ public class LoginViewModel extends ViewModel {
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 status.setValue(false);
                 Log.e("message", t.getMessage());
-
             }
         });
     }

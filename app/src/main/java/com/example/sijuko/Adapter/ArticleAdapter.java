@@ -32,11 +32,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.date.setText(list.get(position).getDate());
+        holder.date.setText(list.get(position).getDate().toString().substring(0, 10));
         holder.title.setText(list.get(position).getTitle().getRendered());
         holder.tvId.setText(Integer.toString(list.get(position).getId()));
-
-
     }
 
     @Override

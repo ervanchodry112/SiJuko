@@ -1,4 +1,4 @@
-package com.example.sijuko;
+package com.example.sijuko.View;
 
 public class Notification {
     String title, description, date;

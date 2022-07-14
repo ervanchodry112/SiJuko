@@ -19,4 +19,5 @@
     <string name="panduan">Panduan Anggota</string>
     <string name="katalog">Katalog Usaha</string>
     <string name="post_url">https://kopmaunila.com/wp-json/wp/v2/posts?per_page=10</string>
+    <string name="registrasi_berhasil">Registrasi Akun Berhasil!</string>
 </resources>

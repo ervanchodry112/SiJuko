@@ -1,6 +1,5 @@
-package com.example.sijuko;
+package com.example.sijuko.View;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,11 +17,10 @@ import android.widget.Toast;
 import com.example.sijuko.API.APIConfig;
 import com.example.sijuko.Adapter.ArticleAdapter;
 import com.example.sijuko.Article.ArticleResponse;
-import com.example.sijuko.Article.Title;
+import com.example.sijuko.SessionManager;
 import com.example.sijuko.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import retrofit2.Call;
@@ -37,6 +35,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView.LayoutManager lmData;
     private List<ArticleResponse> list = new ArrayList<>();
     private SessionManager sessionManager;
+    private String name, npm;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +47,11 @@ public class HomeFragment extends Fragment {
             Intent i = new Intent(getActivity(), LoginActivity.class);
             startActivity(i);
         }
+
+        name = sessionManager.getUserDetail().get(SessionManager.NAMA);
+        npm = sessionManager.getUserDetail().get(SessionManager.NPM);
+        binding.name.setText(name);
+
 
 
         lmData = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);

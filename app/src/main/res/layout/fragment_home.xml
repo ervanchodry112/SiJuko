@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_height="wrap_content"
+    tools:context=".View.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <TabWidget
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </TabWidget>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,21 +29,21 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="60dp"
-                android:text="Hello,"
+                android:paddingLeft="20dp"
+                android:text="Halo,"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                android:paddingLeft="20dp"/>
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
                 android:layout_below="@id/hello"
+                android:paddingLeft="20dp"
+                android:text="@string/name"
                 android:textColor="@color/design_default_color_on_primary"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:paddingLeft="20dp"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -61,6 +68,7 @@
                 android:layout_marginRight="5dp"
                 android:backgroundTint="@color/white"
                 android:src="@drawable/ic_outline_add_box_24" />
+
             <ImageView
                 android:id="@+id/divider1"
                 android:layout_width="2dp"
@@ -247,7 +255,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="900dp"
+                android:layout_height="950dp"
                 android:nestedScrollingEnabled="false"
                 tools:listitem="@layout/article_view" />
 

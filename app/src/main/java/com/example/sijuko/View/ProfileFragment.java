@@ -1,4 +1,4 @@
-package com.example.sijuko;
+package com.example.sijuko.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sijuko.SessionManager;
 import com.example.sijuko.databinding.FragmentProfileBinding;
 
 

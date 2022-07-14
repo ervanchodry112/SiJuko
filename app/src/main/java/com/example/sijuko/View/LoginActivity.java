@@ -1,4 +1,4 @@
-package com.example.sijuko;
+package com.example.sijuko.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,23 +6,18 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
-import com.example.sijuko.API.APIConfig;
 import com.example.sijuko.Model.DataAnggota;
-import com.example.sijuko.Model.LoginResponse;
+import com.example.sijuko.SessionManager;
 import com.example.sijuko.ViewModel.LoginViewModel;
 import com.example.sijuko.databinding.ActivityLoginBinding;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity{
 
     private ActivityLoginBinding binding;
     private String username, password;
-    private String nama, npm, nomor_anggota, referal;
     private LoginViewModel viewModel;
     private DataAnggota _dataAnggota;
     SessionManager sessionManager;
@@ -51,14 +46,17 @@ public class LoginActivity extends AppCompatActivity{
                     _dataAnggota = dataAnggota;
                     Log.d("simpen", _dataAnggota.getNpm());
                     sessionManager.createLoginSession(_dataAnggota);
-//                    Intent i = new Intent(this, MainActivity.class);
-//                    startActivity(i);
                     finish();
                 });
             }else{
                 Toast.makeText(LoginActivity.this, "Username atau Password Salah", Toast.LENGTH_SHORT).show();
                 Log.d("gagal", "Login gagal");
             }
+        });
+
+        binding.toRegister.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(i);
         });
     }
 
