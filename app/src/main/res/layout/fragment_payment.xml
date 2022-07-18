@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".View.PaymentFragment">
+
+    <ImageView
+        android:id="@+id/payment_logo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bank_btn"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nominal Pembayaran"
+        android:layout_above="@id/jumlahBayar"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/jumlahBayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:text="Rp 20000"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp"/>
+
+    <TextView
+        android:id="@+id/labelNomor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nomor Rekening"
+        android:layout_above="@id/jumlahBayar"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/nomorRekening"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:textColor="@color/black"
+        android:text="2017051001"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginHorizontal="20dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/up_bukti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Upload Bukti"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/open_sans_bold"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="20dp"
+        android:text="CANCEL"
+        android:backgroundTint="@color/white"
+        app:strokeColor="@color/primaryColor"
+        app:strokeWidth="1dp"
+        android:textColor="@color/primaryColor"
+        android:textSize="18sp"
+        android:fontFamily="@font/open_sans_bold"/>
+
+
+
+</LinearLayout>

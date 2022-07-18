@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.NominalFragment">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:background="@drawable/header"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/splash"
+        android:layout_marginTop="-300dp"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginHorizontal="20dp"
+        android:layout_centerInParent="true">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bayar Simpanan"
+            android:textAlignment="center"
+            android:textColor="@color/primaryColor"
+            android:textSize="30sp"
+            android:layout_marginVertical="20dp"
+            app:fontFamily="@font/open_sans_bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nominal"
+            android:textColor="@color/primaryColor"
+            android:layout_marginLeft="23dp"
+            android:textSize="20sp"
+            android:labelFor="@id/nominalBayar"/>
+
+        <EditText
+            android:id="@+id/nominalBayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Rp"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bulan"
+            android:textColor="@color/primaryColor"
+            android:layout_marginLeft="23dp"
+            android:textSize="20sp"
+            android:labelFor="@id/bulanBayar"/>
+
+        <EditText
+            android:id="@+id/bulanBayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:hint="Bulan"
+            android:textSize="20sp"
+            android:layout_marginBottom="15dp"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Metode Pembayaran"
+            android:textColor="@color/primaryColor"
+            android:layout_marginLeft="23dp"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:id="@+id/metodeBayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="40dp">
+
+            <RadioButton
+                android:id="@+id/tf_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transfer Bank BTN" />
+
+            <RadioButton
+                android:id="@+id/ovo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OVO"/>
+
+            <RadioButton
+                android:id="@+id/gopay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gopay"/>
+
+            <RadioButton
+                android:id="@+id/dana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DANA"/>
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_bayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Bayar"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="@font/open_sans_bold"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="CANCEL"
+            android:backgroundTint="@color/white"
+            app:strokeColor="@color/primaryColor"
+            app:strokeWidth="1dp"
+            android:textColor="@color/primaryColor"
+            android:textSize="18sp"
+            android:fontFamily="@font/open_sans_bold"/>
+
+        </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sijuko">
+    package="com.kopmaul.sijuko">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,33 +19,41 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SiJuko">
         <activity
-            android:name=".View.MainActivity"
+            android:name="com.kopmaul.sijuko.View.ReferalActivity"
             android:exported="false" />
         <activity
-            android:name=".View.RegisterActivity"
+            android:name="com.kopmaul.sijuko.View.PayTransactionActivity"
             android:exported="false" />
         <activity
-            android:name=".View.LoginActivity"
+            android:name="com.kopmaul.sijuko.View.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.kopmaul.sijuko.View.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".View.SuccessPresensiActivity"
+            android:name="com.kopmaul.sijuko.View.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".View.KeuanganActivity"
+            android:name="com.kopmaul.sijuko.View.SuccessPresensiActivity"
             android:exported="false" />
         <activity
-            android:name=".View.CatalogueActivity"
+            android:name="com.kopmaul.sijuko.View.KeuanganActivity"
             android:exported="false" />
         <activity
-            android:name=".View.ScheduleActivity"
+            android:name="com.kopmaul.sijuko.View.CatalogueActivity"
             android:exported="false" />
         <activity
-            android:name=".View.SurveyActivity"
+            android:name="com.kopmaul.sijuko.View.ScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".View.SplashActivity"
+            android:name="com.kopmaul.sijuko.View.SurveyActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.kopmaul.sijuko.View.SplashActivity"
             android:exported="true"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
