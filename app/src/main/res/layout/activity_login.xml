@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
-
+    tools:context=".View.LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,6 +20,7 @@
         android:elevation="10dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
+        android:layout_centerInParent="true"
         android:layout_marginHorizontal="20dp">
 
         <ImageView
@@ -65,8 +65,7 @@
             android:text="Password"
             android:textColor="@color/primaryColor"
             android:layout_marginLeft="23dp"
-            android:textSize="16sp"
-            android:inputType="text"/>
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/password"
@@ -81,11 +80,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginVertical="20dp"
+            android:layout_marginTop="20dp"
             android:text="LOGIN"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:fontFamily="@font/open_sans_bold"/>
+
+        <TextView
+            android:id="@+id/to_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum Punya Akun?"
+            android:textAlignment="textEnd"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:linksClickable="true"
+            android:textColor="@color/primaryColor"/>
 
         <LinearLayout
             android:id="@+id/alert"
@@ -110,4 +121,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

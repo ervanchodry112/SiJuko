@@ -3,18 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_height="wrap_content"
+    tools:context=".View.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/header">
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginTop="10dp">-->
+<!--                <ImageButton-->
+<!--                    android:id="@+id/barcode"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:background="@drawable/ic_barcode_outline"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerVertical="true"/>-->
+<!--            </RelativeLayout>-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@drawable/header">
+            android:layout_height="180dp">
 
             <TextView
                 android:id="@+id/hello"
@@ -22,21 +41,21 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="60dp"
-                android:text="Hello,"
+                android:paddingLeft="20dp"
+                android:text="Halo,"
                 android:textColor="@color/white"
-                android:textSize="24sp"
-                android:paddingLeft="20dp"/>
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
                 android:layout_below="@id/hello"
+                android:paddingLeft="20dp"
+                android:text="@string/name"
                 android:textColor="@color/design_default_color_on_primary"
                 android:textSize="36sp"
-                android:textStyle="bold"
-                android:paddingLeft="20dp"/>
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -48,7 +67,6 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="-30dp"
-            android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:elevation="6dp">
 
@@ -57,10 +75,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="5dp"
-                android:layout_marginLeft="-5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
                 android:backgroundTint="@color/white"
                 android:src="@drawable/ic_outline_add_box_24" />
+
             <ImageView
                 android:id="@+id/divider1"
                 android:layout_width="2dp"
@@ -71,15 +90,15 @@
 
             <TextView
                 android:id="@+id/totalSimpanan"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="10dp"
                 android:layout_toRightOf="@id/divider1"
                 android:text="@string/totalSimpanan"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/simpanan"
@@ -110,7 +129,7 @@
                 android:layout_toRightOf="@id/divider2"
                 android:text="@string/totalPoin"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/poin"
@@ -244,10 +263,44 @@
 
             </HorizontalScrollView>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Artikel Terbaru"
+                    android:textSize="24sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"/>
+
+
+                <TextView
+                    android:id="@+id/view_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View More >>>"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"/>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:src="@drawable/divider"
+                android:layout_marginHorizontal="10dp"/>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="900dp"
+                android:layout_height="950dp"
                 android:nestedScrollingEnabled="false"
                 tools:listitem="@layout/article_view" />
 
