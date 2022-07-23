@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.kopmaul.sijuko.R;
 import com.kopmaul.sijuko.ViewModel.RegisterViewModel;
@@ -32,49 +35,58 @@ public class RegisterActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
 
         binding.btnRegister.setOnClickListener(view -> {
+            boolean isValid = true;
+
             String npm = binding.npm.getText().toString();
             String nama = binding.namaLengkap.getText().toString();
             String nomor_anggota = binding.nomorAnggota.getText().toString();
             String password = binding.password.getText().toString();
             String password2 = binding.passwordConfirm.getText().toString();
 
-            if(npm == "" || npm.length() < 10){
+            if (npm.isEmpty() || npm.length() < 10) {
                 binding.npm.setError("NPM tidak valid");
-            }if(nama.length() == 0){
+                isValid = false;
+            }
+            if (nama.length() == 0) {
                 binding.namaLengkap.setError("Nama tidak boleh kosong!");
-            }if(nomor_anggota == "" || nomor_anggota.length() < 16){
+                isValid = false;
+            }
+            if (nomor_anggota.isEmpty() || nomor_anggota.length() < 16) {
                 binding.nomorAnggota.setError("Nomor Anggota Tidak Valid");
-            }if(password.length() == 0 || password2.length() == 0){
+                isValid = false;
+            }
+            if (password.length() == 0 || password2.length() == 0) {
                 binding.password.setError("Password tidak boleh kosong");
                 binding.passwordConfirm.setError("Password tidak boleh kosong");
-            }else if(!password.equals(password2)){
+                isValid = false;
+            } else if (!password.equals(password2)) {
                 binding.password.setError("Password tidak sama!");
                 binding.passwordConfirm.setError("Password tidak sama!");
-            }else{
-                if(nomor_anggota.length() > 0){
-                    username = nomor_anggota.substring(0, 4) + nomor_anggota.substring(14);
-                    viewModel.register(username, password, npm);
-                }
+                isValid = false;
+            }
+
+            if (isValid){
+                username = nomor_anggota.substring(0, 4) + nomor_anggota.substring(14);
+                viewModel.register(username, password, npm);
             }
         });
 
-        binding.btnCancel.setOnClickListener(view -> {
-            finish();
-        });
+        binding.btnCancel.setOnClickListener(view -> finish());
 
         viewModel.getStatus().observe(RegisterActivity.this, status -> {
-            if(status){
+            if (status) {
 
                 viewModel.getMessage().observe(this, _message -> {
                     message = _message;
+                    Toast.makeText(this, message, Toast.LENGTH_LONG).show();
                 });
                 viewModel.getCode().observe(this, _code -> {
-                    if(_code == 301 || _code == 401){
+                    if (_code == 301 || _code == 401) {
                         binding.npm.setError(message);
-                    }if (_code == 501 || _code == 403){
+                    } else if (_code == 501 || _code == 403) {
                         binding.konten.setText(message);
                         binding.alert.setVisibility(View.VISIBLE);
-                    }else{
+                    } else {
                         dialogBinding.registedUsername.setText(username);
                         dialog.show();
                     }
@@ -88,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
         dialog = new Dialog(this);
         dialog.setContentView(dialogBinding.getRoot());
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.background_dialog));
         }
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
